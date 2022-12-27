@@ -26,6 +26,5 @@ public class CustomUserDetailService implements UserDetailsService {
         ProfileEntity profile = optional.get();
 
         return new CustomUserDetails(profile);
-
     }
 }

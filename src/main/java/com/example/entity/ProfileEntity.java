@@ -31,6 +31,9 @@ public class ProfileEntity {
     @Column
     private String password;
 
+    @Column
+    private String email;
+
     @Column(name = "photo_id")
     private String photoId;
     @JoinColumn(name = "photo_id", insertable = false,updatable = false)
