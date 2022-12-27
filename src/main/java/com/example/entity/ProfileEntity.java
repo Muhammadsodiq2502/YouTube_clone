@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -41,8 +43,16 @@ public class ProfileEntity {
     private AttachEntity photo;
 
     @Column
-    private ProfileRole role;
+    @Enumerated(EnumType.STRING)
+    private ProfileRole role = ProfileRole.ROLE_USER;
 
     @Column
-    private ProfileStatus status;
+    @Enumerated(EnumType.STRING)
+    private ProfileStatus status = ProfileStatus.NOT_ACTIVE;
+
+    @Column(name = "created_date")
+    private LocalDateTime createdDate = LocalDateTime.now();
+
+    @Column
+    private Boolean visible = Boolean.TRUE;
 }
