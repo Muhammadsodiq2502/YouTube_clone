@@ -18,6 +18,10 @@ target/
 *.iws
 *.iml
 *.ipr
+*.txt
+
+### Secure Files ###
+**/talablar.txt
 
 ### NetBeans ###
 /nbproject/private/
