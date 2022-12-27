@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import com.example.enums.ProfileRole;
+import com.example.enums.ProfileStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,13 +30,16 @@ public class ProfileEntity {
 
     @Column
     private String password;
-//
-//    @Column
-//    private AttachEntity photo;
-//
-//    @Column
-//    private ProfileRole role;
-//
-//    @Column
-//    private ProfileStatus status;
+
+    @Column(name = "photo_id")
+    private String photoId;
+    @JoinColumn(name = "photo_id", insertable = false,updatable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    private AttachEntity photo;
+
+    @Column
+    private ProfileRole role;
+
+    @Column
+    private ProfileStatus status;
 }
