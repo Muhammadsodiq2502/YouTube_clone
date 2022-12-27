@@ -1,0 +1,11 @@
+### Registration ###
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Ma'ruf",
+  "surname": "Raufov",
+  "phone": "7777",
+  "password": "7777",
+  "email": "raufovmaruf555@gmail.com"
+}
